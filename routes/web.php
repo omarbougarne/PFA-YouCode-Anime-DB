@@ -5,6 +5,7 @@ use App\Http\Controllers\AnimeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\AnimeListController;
 
 
 
@@ -22,6 +23,9 @@ Route::get('/login', [UserController::class, 'login']);
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 Route::resource('anime', AnimeController::class);
 Route::post('/anime/{anime}', [AnimeController::class, 'show'])->name('anime.comments.store');
+
+
+Route::post('/anime-list', [AnimeListController::class, 'addToFavorites'])->name('anime-list.store');
 
 
 
