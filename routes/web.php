@@ -21,7 +21,8 @@ Route::post('/logout', [UserController::class, 'logout']);
 Route::get('/login', [UserController::class, 'login']);
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 Route::resource('anime', AnimeController::class);
-Route::get('/anime/{anime}', [AnimeController::class, 'show'])->name('anime.show');
+Route::post('/anime/{anime}', [AnimeController::class, 'show'])->name('anime.comments.store');
+
 
 
 

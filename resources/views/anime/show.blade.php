@@ -29,6 +29,11 @@
                 @enderror
                 <button type="submit" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
             </form>
+            <form action="{{ route('anime-list.store') }}" method="POST">
+                @csrf
+                <input type="hidden" name="anime_id" value="{{ $anime->id }}">
+                <button type="submit" class="mt-4 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">Add to My List</button>
+            </form>
         </div>
     </div>
 </body>
